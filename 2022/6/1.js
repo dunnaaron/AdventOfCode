@@ -6,7 +6,7 @@ let res = 0;
 for (let i = 0; i < bufferStream.length - 4; i++) {
 	const substr = bufferStream.substring(i, i + 4);
 
-	const unique = new Set(substr.split(''));
+	const unique = new Set(substr);
 	if (unique.size === 4) {
 		res = i + 4;
 		break;

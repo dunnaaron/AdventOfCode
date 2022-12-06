@@ -15,8 +15,10 @@ crates = crates.map((x) =>
 const tempLastRow = crates[crates.length - 1];
 const numberOfCrateStacks = parseInt(tempLastRow[tempLastRow.length - 2]);
 
+// Remove number row
 crates.pop();
 
+// Format instructions into array of ints
 instructs = instructs
 	.map((thing) =>
 		thing
@@ -28,6 +30,7 @@ instructs = instructs
 
 let reorderedCrates = [];
 
+// make each "stack" into an array with the top of the stack being index 0
 for (let i = 0; i < numberOfCrateStacks; i++) {
 	const temp = [];
 	crates.forEach((x) => temp.push(x[i]));
